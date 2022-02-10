@@ -1,0 +1,86 @@
+"Ciągi znaków"
+SET companyname "IT COMPAMY"
+SET company:1:sector "IT"
+SET company:1:developers 8955
+
+GET company:1:sector
+GET company:1:developers
+
+SET company:count 1
+INCR company:count
+INCRBY company:count 100
+DECR company:count
+DECRBY company:count 100
+
+MGET company:1:sector company:1:developers
+MSET company:2:sector Development company:2:developers 5876
+MGET company:2:sector company:2:developers
+
+DEL company:count
+EXISTS company:count
+TYPE company:count
+
+"Llisty"
+LRANGE tasks 0 -1
+RPOP tasks
+LTRIM tasks 0 3
+BRPOP tasks tasks 0
+BLPOP tasks tasks 1
+
+DEL tasks
+
+"Zbiory"
+SADD team_group 120484 38601 120899 128487 128201 128202 127999 123456 126658 125486 124785 128100
+SMEMBERS team_group
+SISMEMBER team_group 127999
+
+SADD min_average
+SMEMBERS min_average:1:task
+
+SADD max_average:1:task 123456 126658 125486
+SINTER min_average:1:task max_average:1:task
+SUNIONSTORE max_average worst_developer:1:ids
+SPOP max_average
+SMEMBERS max_average
+SCARD max_average
+
+"Zbiory posortowane"
+ZADD 38601_rating:0001 4 "Critical"
+ZADD 38601_rating:0002 3 "Critical"
+ZADD 38601_rating:0003 5 "Critical"
+ZADD 38601_rating:0004 5 "Critical"
+
+ZRANGE 120484_rating:0001 0 -1 WITHSCORES
+ZREVRANGE 120484_rating:0001 0 -1 WITHSCORES
+ZRANGEBYSCORE 120484_rating:0001 -inf 5
+ZRANK 120484_rating:0001 5 "Critical"
+ZREMRANGEBYSCORE 120484_rating:0001 2 3
+
+"Tablice asocjacyjne"
+HMSET taskid:1 cla 2 value 1
+HMSET taskid:2 cla 5 value 1
+
+HGETALL taskid:1
+HMGET taskid:2 cla
+HMGET taskid:2 cla value
+
+HINCRBY taskid:1 cla 1
+
+DEL taskid:1
+
+"Bitmapy"
+
+// P
+SETBIT bit_test 1 1
+SETBIT bit_test 2 0
+SETBIT bit_test 3 1
+
+//X
+SETBIT bit_test 1 1
+SETBIT bit_test 2 0
+SETBIT bit_test 3 1
+SETBIT bit_test 4 1
+
+GETBIT bit_test 1
+BITCOUNT bit_test
+BITPOS bit_test 1 3

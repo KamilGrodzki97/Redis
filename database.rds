@@ -1,0 +1,228 @@
+s--echo  "start"
+
+set seniordeveloper:1:name Jan
+set seniordeveloper:1:surname Nowak
+set seniordeveloper:2:name Jan
+set seniordeveloper:2:surname Robak
+set seniordeveloper:3:name Dariusz
+set seniordeveloper:3:surname Kamyszek
+set seniordeveloper:4:name Dariusz
+set seniordeveloper:4:surname Janiszek
+set seniordeveloper:5:name Maria
+set seniordeveloper:5:surname Wona
+set seniordeveloper:6:name Maria
+set seniordeveloper:6:surname Dolna
+set seniordeveloper:7:name Karolina
+set seniordeveloper:7:surname Wolna
+set seniordeveloper:8:name Karolina
+set seniordeveloper:8:surname Dolna
+set seniordeveloper:9:name Kamil
+set seniordeveloper:9:surname Janiszek
+set seniordeveloper:10:name Kamil
+set seniordeveloper:10:surname Kamyszek
+set seniordeveloper:11:name Filip
+set seniordeveloper:11:surname Maniuszek
+set seniordeveloper:12:name Filip
+set seniordeveloper:12:surname Waluszek
+set seniordeveloper:13:name Janusz
+set seniordeveloper:13:surname Walczuk
+set seniordeveloper:14:name Janusz
+set seniordeveloper:14:surname Boski
+set seniordeveloper:15:name Dariusz
+set seniordeveloper:15:surname Miesny
+set seniordeveloper:16:name Dariusz
+set seniordeveloper:16:surname Niemiesny
+set seniordeveloper:17:name Piotr
+set seniordeveloper:17:surname Boski
+set seniordeveloper:18:name Piotr
+set seniordeveloper:18:surname Walczuk
+set seniordeveloper:19:name Andrew
+set seniordeveloper:19:surname Vigo
+
+set points:1:developer 128476 
+set points:1:tresc "Spóźnienie"
+set points:2:developer 120484
+set points:2:tresc "Brak aktywności podczas spotkania z klientem"
+set points:3:developer 38601
+set points:3:tresc "Brak raportu miesięcznego"
+set points:4:developer 120899
+set points:4:tresc "Niechęć do pracy z kobietami"
+set points:5:developer 128487
+set points:5:tresc "Nieodnotowana nieobecność"
+set points:6:developer 127999
+set points:6:tresc "Zmiana terminu realizacji wdrożenia bez poinformowania teamu"
+set points:7:developer 128476
+set points:7:tresc "Brak analizy zgłoszenia"
+set points:8:developer 127859 
+set points:8:tresc "Zmiana danych na bazie produkcyjnej"
+set points:9:developer 124856
+set points:9:tresc "Ponad godzinna przerwa"
+set points:10:developer 128975
+set points:10:tresc "Stworzenie dokumentacji technicznej pomijając standardy firmy"
+set points:11:developer 124857
+set points:11:tresc "Brak udekumentowanej przerwy w okresie 01.12.2021-18.12.2021"
+set points:12:developer 128475
+set points:12:tresc "Brak profesjonalizmu podczas rozmowy z klientem"
+
+set tasks:1:title "CRITICAL ERROR"
+set taskshortcut:1:shortcut 0001
+set tasks1:1:startdate 12.12.2021
+set tasks:1:seniordeveloper 1
+set tasks:1:taskid 1
+set tasks:2:title "INFO"
+set taskshortcut:2:shortcut 0002
+set tasks:2:startdate 12.12.2021
+set tasks:2:seniordeveloper 3
+set tasks:2:taskid 2
+set tasks:3:title "DELETED DATA"
+set taskshortcut:3:shortcut 0003
+set tasks:3:startdate 13.12.2021
+set tasks:3:seniordeveloper 2
+set tasks:3:taskid 3
+set tasks:4:title "HIGH TIME"
+set taskshortcut:2:shortcut 0004
+set tasks:4:startdate 14.12.2021
+set tasks:4:seniordeveloper 4
+set tasks:4:taskid 4
+set tasks:5:title "WRONG INFO"
+set taskshortcut:5:shortcut 0005
+set tasks:5:startdate 17.12.2021
+set tasks:5:seniordeveloper 5
+set tasks:5:taskid 5
+set tasks:6:title "NO INFO"
+set taskshortcut:6:shortcut 0006
+set tasks:6:startdate 17.12.2021
+set tasks:6:seniordeveloper 6
+set tasks:6:taskid 6
+set tasks:7:title "NO VIEW"
+set taskshortcut:7:shortcut 0007
+set tasks:7:startdate 17.12.2021
+set tasks:7:seniordeveloper 6
+set tasks:7:taskid 7
+set tasks:8:title "NO DATA"
+set taskshortcut:8:shortcut 0008
+set tasks:8:startdate 19.12.2021
+set tasks:8:seniordeveloper 7
+set tasks:8:taskid 8
+set tasks:9:title "BLACK SCREEN"
+set taskshortcut:9:shortcut 0009
+set tasks:9:startdate 21.12.2021
+set tasks:9:seniordeveloper 9
+set tasks:10:taskid 9
+set tasks:10:title "WRONG SIGNATURE"
+set taskshortcut:10:shortcut 0010
+set tasks:10:startdate 22.12.2021
+set tasks:10:seniordeveloper 10
+set tasks:10:taskid 10
+set tasks:11:title "WRONG DATA"
+set taskshortcut:11:shortcut 0011
+set tasks:11:startdate 22.12.2021
+set tasks:11:seniordeveloper 11
+set tasks:11:taskid 11
+set tasks:12:title "ERROR 400 - TEST"
+set taskshortcut:12:shortcut 0012
+set tasks:12:startdate 24.12.2021
+set tasks:12:seniordeveloper 12
+set tasks:12:taskid 12
+set tasks:13:title "ERROR 500 - PROD"
+set taskshortcut:13:shortcut 0013
+set tasks:13:startdate 27.12.2021
+set tasks:13:seniordeveloper 13
+set tasks:13:taskid 13
+
+--echo "2. listy"
+RPUSH subject "CRITICAL ERROR" "INFO" "DELETED DATA" "HIGH TIME" "WRONG INFO" "NO INFO" "NO VIEW"
+LPUSH subject "NO DATA" "BLACK SCREEN" "WRONG SIGNATURE" "WRONG DATA" "ERROR 400 - TEST" "ERROR 500 - PROD"
+
+
+
+
+
+
+
+
+
+
+
+
+--echo "3. zbiory"
+SADD team_A 120484 38601 120899 128487 128201 128202 127999 123456 126658 125486 124785 128100
+SADD team_B:1:team 120484 38601 120899
+SADD team_C:2:team 128487 128201 128202
+SADD team_D:3:team 127999 123456 126658
+SADD team_E:4:team 125486 124785 128100
+SUNIONSTORE najwyzsza_srednia team_D:3:team 
+
+--echo "4. zbiory posortowane, ocena pracownika od 0 do 5 w przypisanym zgłozeniu oraz poziom ważności zgłoszenia"
+ZADD 38601_rating:0001 4 "Critical"
+ZADD 38601_rating:0002 3 "Critical"
+ZADD 38601_rating:0003 5 "Critical"
+ZADD 38601_rating:0004 5 "Critical"
+ZADD 120484_rating:0001 4 "Low"
+ZADD 120484_rating:0006 3 "Middle"
+ZADD 120484_rating:0007 5 "High"
+ZADD 120484_rating:0004 5 "Critical"
+ZADD 120899_rating:0001 5 "Question"
+ZADD 120899_rating:0002 4 "Critical"
+ZADD 120899_rating:0003 5 "High"
+ZADD 120899_rating:0004 5 "Critical"
+ZADD 128487_rating:0001 2 "Middle"
+ZADD 128487_rating:0002 4 "Middle"
+ZADD 128201_rating:0001 4 "Low"
+ZADD 127999_rating:0001 3 "Critical"
+ZADD 126658_rating:0001 3 "Low"
+ZADD 128202_rating:0007 4 "Critical"
+ZADD 128202_rating:0008 3 "High"
+ZADD 126658_rating:0002 5 "Critical"
+ZADD 125486_rating:0002 2 "Critical"
+ZADD 125486_rating:0004 2 "Critical"
+ZADD 124785_rating:0005 2 "High"
+ZADD 128100_rating:0006 4 "High"
+
+--echo " tablice asocjacyjne, numer zgłoszenia, CLA(tj.poziom) zgłoszenia oraz status zgłszenia"
+HMSET taskid:1 cla 1 value 1
+HMSET taskid:2 cla 2 value 1
+HMSET taskid:3 cla 2 value 1
+HMSET taskid:4 cla 1 value 0
+HMSET taskid:5 cla 4 value 0
+HMSET taskid:6 cla 3 value 1
+HMSET taskid:7 cla 2 value 0
+HMSET taskid:8 cla 1 value 1
+HMSET taskid:9 cla 2 value 1
+HMSET taskid:10 cla 3 value 1
+HMSET taskid:11 cla 4 value 1
+HMSET taskid:12 cla 1 value 1
+HMSET taskid:13 cla 2 value 1
+
+HMSET developer:38601 name Jan surname Matejko dateofbirth "01.01.1978" specialization Front-end
+HMSET developer:120484 name Kamil surname Grodzki dateofbirth "12.12.1988" specialization Front-end
+HMSET developer:120899 name Anna surname Nowakowska dateofbirth "15.03.1998" specialization Full-stack
+HMSET developer:128487 name Daria surname Jantar dateofbirth "20.09.1997" specialization Tests
+HMSET developer:128201 name Piotr surname Kopernik dateofbirth "01.08.1997" specialization Front-end
+HMSET developer:128202 name Marcin surname Dariuszewski dateofbirth "02.07.1992" specialization Full-stack
+HMSET developer:127999 name Dawid surname Kmak dateofbirth "09.06.1989" specialization Full-stack
+HMSET developer:123456 name Anna surname Manna dateofbirth "30.01.1998" specialization Tests
+HMSET developer:126658 name Janusz surname Grab dateofbirth "13.07.1996" specialization Tests
+HMSET developer:125486 name Filip surname Doniec dateofbirth "13.07.1997" specialization Back-end
+HMSET developer:124785 name Jan surname Baran dateofbirth "08.03.1995" specialization Back-end
+HMSET developer:128100 name Filip surname Jonczyk  dateofbirth "25.07.1994" specialization Back-end
+
+
+--echo "bitmapy"
+SETBIT bit 1 1
+SETBIT bit 2 0
+SETBIT bit 3 0
+SETBIT bit 4 1
+
+SET companyname "IT COMPAMY"
+SET company:1:sector "IT"
+SET company:1:developers 8955
+
+GET company:1:sector
+GET company:1:developers
+
+SET company:count 1
+INCR company:count
+INCRBY company:count 100
+DECR company:count
+DECRBY company:count 100
